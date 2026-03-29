@@ -1,5 +1,5 @@
 // Central API client — all requests go through here
-const API_BASE = 'http://localhost:3001/api'
+const API_BASE = '/api'
 
 // Save token after login
 export function saveToken(token) {
