@@ -1,8 +1,8 @@
 'use strict';
 
-const { supabase } = require('../../_lib/supabase');
-const { verifyAuth } = require('../../_lib/authMiddleware');
-const { handlePreflight } = require('../../_lib/cors');
+const { supabase } = require('../_lib/supabase');
+const { verifyAuth } = require('../_lib/authMiddleware');
+const { handlePreflight } = require('../_lib/cors');
 
 module.exports = async function handler(req, res) {
   if (handlePreflight(req, res)) return;
