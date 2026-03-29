@@ -35,10 +35,8 @@ function App() {
           <footer className="border-t border-gray-800/60 py-5 mt-10">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
               <p className="text-sm text-gray-600">
-                Built with{' '}
-                <span className="text-brand-500 font-medium">React</span>,{' '}
-                <span className="text-brand-500 font-medium">Tailwind CSS</span> &{' '}
-                <span className="text-brand-500 font-medium">Supabase</span>
+                Built by{' '}
+                <span className="text-brand-500 font-medium">Debashreee</span>
               </p>
             </div>
           </footer>
