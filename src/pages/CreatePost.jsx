@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext'
 export default function CreatePost() {
   const navigate = useNavigate()
   const { user } = useAuth()
-  const [form, setForm] = useState({ title: '', body: '', author: '' })
+  const [form, setForm] = useState({ title: '', body: '' })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -27,7 +27,7 @@ export default function CreatePost() {
     const { error: insertError } = await api.posts.create(
       form.title.trim(),
       form.body.trim(),
-      form.author.trim() || user?.email || 'Anonymous'
+      user?.email || 'Anonymous'
     )
 
     setLoading(false)
@@ -87,18 +87,9 @@ export default function CreatePost() {
             />
           </div>
 
-          {/* Author */}
-          <div>
-            <label htmlFor="author" className="label">Your Name</label>
-            <input
-              id="author"
-              name="author"
-              type="text"
-              value={form.author}
-              onChange={handleChange}
-              placeholder={user?.email || 'Anonymous'}
-              className="input-field"
-            />
+          {/* Author — auto-filled from logged-in user */}
+          <div className="px-1 py-2 rounded-xl text-sm text-gray-400">
+            Posting as: <span className="text-gray-200 font-medium">{user?.email || 'Anonymous'}</span>
           </div>
 
           {/* Body */}
