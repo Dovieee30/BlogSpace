@@ -54,5 +54,8 @@ export const api = {
       request(`/posts/${id}`, { method: 'PUT', body: JSON.stringify(fields) }),
 
     delete: (id) => request(`/posts/${id}`, { method: 'DELETE' }),
+
+    like: (id, action) =>
+      request(`/posts/${id}/like`, { method: 'POST', body: JSON.stringify({ action }) }),
   },
 }
